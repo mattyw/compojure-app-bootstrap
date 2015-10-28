@@ -2,6 +2,9 @@
 set -ev
 sudo apt-get install -y --force-yes openjdk-7-jre-headless
 sudo cp lein /usr/bin
+su - ubuntu
+cd $HOME
 lein new compojure-app my-app
-nohup lein ring server > server.log &
+cd my-app
+nohup lein ring server > /home/ubuntu/server.log &
 open-port 3000
