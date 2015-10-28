@@ -1,0 +1,6 @@
+#!/bin/sh
+set -ev
+sudo cp lein /usr/bin
+lein new compojure-app my-app
+nohup lein ring server > server.log &
+open-port 3000
